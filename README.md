@@ -22,12 +22,13 @@ into [CNTK](https://github.com/Microsoft/CNTK/). To avoid duplication, we are pl
 new layers as they are added to CNTK. This is why NativeKeras still lacks **LSTM** and **Embedding**, to
 mentione a few.
 
-Our first priorities currently are:
+Our current priorities, in no specific order, are:
 * Streamline the build process.
 * Provide nuggets.
 * Streamline CPU/GPU training/scoring process using an approach similar to Keras' global options.
 * Add more optimizers. Currently SGD is pretty much the only one supported and tested.
 * Move to .NET Core and support Linux.
+* Extend the JSON model to support arbitrary (non-sequential) models.
 
 
 # Setup to build NativeKeras
