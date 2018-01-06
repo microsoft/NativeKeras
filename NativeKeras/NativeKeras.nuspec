@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>NativeKeras.CpuOnly</id>
+    <version>0.0.1</version>
+    <authors>Ivan Popivanov</authors>
+    <owners>Ivan Popivanov</owners>
+    <licenseUrl>https://kerasharp.visualstudio.com/_git/kerasharp?path=%2FLICENSE.md</licenseUrl>
+    <projectUrl>https://kerasharp.visualstudio.com/kerasharp/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Keras-style API for .NET. Uses the Cognitive Toolking (CNTK) as backend.</description>
+    <tags>native keras cntk</tags>
+  </metadata>
+
+  <files>
+    <file src="..\output\bin\Release\Cntk*.dll" target="build\x64" />
+    <file src="..\output\bin\Release\CpuOps.dll" target="build\x64" />
+    <file src="..\output\bin\Release\fmt.dll" target="build\x64" />
+    <file src="..\output\bin\Release\KerasCntk.dll" target="build\x64" />
+    <file src="..\output\bin\Release\libgcc_s_seh-1.dll" target="build\x64" />
+    <file src="..\output\bin\Release\libgfortran-3.dll" target="build\x64" />
+    <file src="..\output\bin\Release\libiomp5md.dll" target="build\x64" />
+    <file src="..\output\bin\Release\libopenblas.dll" target="build\x64" />
+    <file src="..\output\bin\Release\libprotobuf.dll" target="build\x64" />
+    <file src="..\output\bin\Release\libprotobuf-lite.dll" target="build\x64" />
+    <file src="..\output\bin\Release\libquadmath-0.dll" target="build\x64" />
+    <file src="..\output\bin\Release\mkl_cntk_p.dll" target="build\x64" />
+    <file src="..\output\bin\Release\opencv_world310.dll" target="build\x64" />
+    <file src="..\output\bin\Release\TH.dll" target="build\x64" />
+    <file src="..\output\bin\Release\zip.dll" target="build\x64" />
+    <file src="..\output\bin\Release\zlib.dll" target="build\x64" />
+    <file src="..\output\bin\Release\zlib1.dll" target="build\x64" />
+
+    <file src="..\output\bin\Release\Newtonsoft.Json.dll" target="lib\net45" />
+    <file src="..\output\bin\Release\Google.Protobuf.dll" target="lib\net45" />
+    <file src="..\output\bin\Release\TensorSharp.dll" target="lib\net45" />
+    <file src="..\output\bin\Release\NativeKeras.dll" target="lib\net45" />
+
+    <file src="NativeKeras.CpuOnly.targets" target="build" />
+  </files>
+</package>

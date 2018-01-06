@@ -1,0 +1,108 @@
+//
+// protoc --csharp_out=. Keras.proto
+//
+
+syntax = "proto3";
+
+package keras;
+
+option csharp_namespace = "Keras";
+
+enum KerasCommand {
+	Fit = 0;
+	Predict = 1;
+}
+
+message KerasProto {
+	string graph = 1; // The symbolic graph
+
+	bytes model = 2; // The binary model
+	string model_path = 3;
+	string model_uuid = 4;
+
+    string compile_params = 5;
+    string fit_params = 6;
+	string predict_params = 7;
+
+    string path = 8;
+    uint32 nsamples = 9;
+    uint32 nfeatures = 10;
+    uint32 nlabels = 11;
+
+    uint32 batch_size = 12;
+    uint32 epochs = 13;
+
+	uint32 verbose = 14;
+
+	repeated TensorProto inputs = 15;
+	repeated TensorProto outputs = 16;
+
+	uint64 progress_callback = 17;
+
+	KerasCommand command = 18;
+}
+
+enum TensorFormat {
+	RowMajor = 0;
+	ColumnMajor = 1;
+}
+
+enum DataType {
+	Float = 0;
+	Double = 1;
+
+	Int32 = 2;
+	Int64 = 3;
+	UInt32 = 4;
+	UInt64 = 5;
+	String  = 6;
+
+    Int8 = 7;
+    Int16 = 8;
+
+    UInt8 = 9;
+    UInt16 = 10;
+    
+    Bool = 11;
+
+	Undefined = 12;
+}
+
+message TensorProto {
+	DataType type = 1;
+	TensorFormat format = 2;
+	int32 count = 3;
+	repeated int32 shape = 4;
+	repeated int32 indices = 5;
+	bytes data = 6;
+}
+
+message StreamConfigurationProto {
+	string name = 1;
+	int64 dim = 2;
+	bool sparse = 3;
+}
+
+message TextDataSourceProto {
+	string path = 1;
+	repeated StreamConfigurationProto streams = 2;
+}
+
+enum HistoryCallbackType {
+	TrainingBegin = 0;
+	TrainingEnd = 1;
+
+	BatchBegin = 2;
+	BatchEnd = 3;
+
+	EpochBegin = 4;
+	EpochEnd = 5;
+}
+
+message HistoryProto {
+	HistoryCallbackType type = 1;
+	uint32 id = 2;
+	repeated string names = 3;
+	repeated double values = 4;
+	uint64 nsamples = 5;
+}
