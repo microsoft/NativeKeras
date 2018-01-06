@@ -19,8 +19,7 @@ a good number of the image related layers is implemented as well.
 
 NativeKeras C++ layers are similar to the ongoing work to integrate [ONNX](https://github.com/onnx/onnx)
 into [CNTK](https://github.com/Microsoft/CNTK/). To avoid duplication, we are planning to add
-new layers as they are added to CNTK. This is why NativeKeras still lacks **LSTM** and **Embedding**, to
-mentione a few.
+new layers as they are added to CNTK. This is why NativeKeras still lacks, among others, **LSTM** and **Embedding** layers.
 
 Our current priorities, in no specific order, are:
 * Streamline the build process.
