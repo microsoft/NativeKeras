@@ -74,8 +74,8 @@ After these two steps, I would expect the project to build.
     model.Compile("categorical_crossentropy", optimizer, new string[] { "accuracy" });
     
     // Load the training data. The code uses TensorSharp.
-    var xtrain = TensorUtils.Deserialize(new FileStream("datasets/nda_mnist/mnist_xtrain.nda", FileMode.Open));
-    var ytrain = TensorUtils.Deserialize(new FileStream("datasets/nda_mnist/mnist_ytrain.nda", FileMode.Open));
+    var xtrain = TensorUtils.Deserialize(new FileStream("Datasets/nda_mnist/mnist_xtrain.nda", FileMode.Open));
+    var ytrain = TensorUtils.Deserialize(new FileStream("Datasets/nda_mnist/mnist_ytrain.nda", FileMode.Open));
     
     // The data is in row-major byte format. Convert to float and normalize.
     xtrain = xtrain.Cast(DType.Float32);
@@ -87,22 +87,21 @@ After these two steps, I would expect the project to build.
     model.Fit(xtrain, ytrain, batchSize: 128, epochs: 12);
 
 Reference [Keras Documentation](https://keras.io) directly for the meaning of each function and parameter used in the
-deep network configuratoin.
+deep network configuratoin. Yes, it is that easy!
 
 Then to predict:
 
     // Load the test data
-    var xtest = TensorUtils.Deserialize(File.OpenRead("datasets/nda_mnist/mnist_xtest.nda"));
+    var xtest = TensorUtils.Deserialize(File.OpenRead("Datasets/nda_mnist/mnist_xtest.nda"));
     xtest = xtest.Cast(DType.Float32);
     xtest = Ops.Div(null, xtest, 255f);
     
-    var model = Sequential.Load("models/mnist.model");
+    var model = Sequential.Load("Models/mnist.model");
     
     // Predict
     var result = model.Predict(xtest, batchSize: 32);
 
-All examples are available [from a separate repository](https://ivannp.visualstudio.com/NativeKerasExamples). Some are available 
-[in this repository's Example folder](https://ivannp.visualstudio.com/_git/NativeKeras?path=%2FExamples).
+The examples are from [this repository's Example folder](https://github.com/Microsoft/NativeKeras/tree/master/Examples).
 
 
 # Contributing
