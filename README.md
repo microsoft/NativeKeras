@@ -1,34 +1,34 @@
-__NativeKeras__ is an open source library for deep learning. It democratizes deep learning across languages via an easy to understand, and to use, language-agnostic API.
-Bottom line is: no need of Python unless that's the language of your choice!
+__NativeKeras__ is an open source library for deep learning. NativeKeras is a high-level library,
+vaguely based on [Keras](https://keras.io/) and [Gluon](https://github.com/gluon-api/gluon-api). At the
+same time, NativeKeras is build in native code (C++). Thus, it's language agnostic in the sense that
+it could be easily integrated into any language that speaks JSON and Protocol Buffers! Bottom line is:
+no need of Python unless that's the language of your choice!
 
-The API  is easy to use - it is inspired and closely follows
-[Keras' API](https://keras.io). NativeKeras is implemented directly on top of [Microsoft's Cognitive Toolkit](https://www.microsoft.com/en-us/cognitive-toolkit/).
-
-NativeKeras can be used directly from C++. Furthermore, the library interface is designed around JSON and [Protocol Buffers](https://developers.google.com/protocol-buffers/).
-Thus, it's extremely easy to use the API from any language which can talk JSON and Protocol Buffers!
+NativeKeras is implemented directly on top of [Microsoft's Cognitive Toolkit](https://www.microsoft.com/en-us/cognitive-toolkit/).
 
 As a sample implementatoin, NativeKeras provides a C# library.
 
+
 # Installation
-We are trying to figure out the build process. For now the nuget package is available [here](https://ivannp.visualstudio.com/nativekeras/_git/NativeKeras?path=%2FNativeKeras%2FNativeKeras.CpuOnly.0.0.1.nupkg&version=GBmaster&_a=contents).
-To install the nuget, download it locally and then, from the [Package Manager Consoler](https://docs.microsoft.com/en-us/nuget/tools/package-manager-console) run:
-    
-    Install-Package C:\Path\To\The\Nuget\NativeKeras.CpuOnly.0.0.1.nupkg
+
 
 # Status, Goals and Roadmap
-The current code base implements a good number of basic Keras functionality like initializers and activations. The basic Keras layers (*Dense*, *Dropout*, etc)
-are also implemented. Last, a good number of the image related layers is implemented as well.
+The current code base implements a good number of basic Keras functionality like initializers
+and activations. The basic Keras layers (*Dense*, *Dropout*, etc) are also implemented. Last,
+a good number of the image related layers is implemented as well.
 
-Currently it is most useful to provide feedback via Pull Requests and Issues. The Issues help prioritize the development. What follows is a somewhat random
-list of what is to come in near future (the plan is to release most of it before Christmas 2017):
-* Provide a nuget repository and package for C# users
+NativeKeras C++ layers are similar to the ongoing work to integrate [ONNX](https://github.com/onnx/onnx)
+into [CNTK](https://github.com/Microsoft/CNTK/). To avoid duplication, we are planning to add
+new layers as they are added to CNTK. This is why NativeKeras still lacks **LSTM** and **Embedding**, to
+mentione a few.
+
+Our first priorities currently are:
+* Streamline the build process.
+* Provide nuggets.
+* Streamline CPU/GPU training/scoring process using an approach similar to Keras' global options.
 * Add more optimizers. Currently SGD is pretty much the only one supported and tested.
-* Add Keras recurrent layers - *LSTM*
-* Add Keras embedding layers
-* Streamline CPU/GPU training/scoring process using an approach similar to Keras' global options
+* Move to .NET Core and support Linux.
 
-For the embedding and recurrent layers, the plan is to use [Keras IMDB example](https://github.com/fchollet/keras/blob/master/examples/imdb_lstm.py).
-If you have better ideas - please chime in.
 
 # Setup to build NativeKeras
 The project depends on a few C++ libraries. One way to add most dependencies is via [vcpkg](https://github.com/Microsoft/vcpkg):
@@ -53,6 +53,7 @@ To hook them up, without changing any project settings:
 Now you have __cntk/API__. Similary, from the CNTK repository copy __CNTK/x64/Release_CpuOnly__, to __cntk/Release_CpuOnly__.
 
 After these two steps, I would expect the project to build.
+
 
 # Training MNIST, Keras-style
 [Keras' MNIST example](https://github.com/fchollet/keras/blob/master/examples/mnist_cnn.py) coded in __nativekeras__:
