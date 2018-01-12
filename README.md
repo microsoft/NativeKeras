@@ -56,7 +56,7 @@ After these two steps, I would expect the project to build.
 
 
 # Training MNIST, Keras-style
-[Keras' MNIST example](https://github.com/fchollet/keras/blob/master/examples/mnist_cnn.py) coded in __nativekeras__:
+[Keras' MNIST example](https://github.com/fchollet/keras/blob/master/examples/mnist_cnn.py) coded in NativeKeras:
 
     // Define the DNN
     var model = new Sequential();
