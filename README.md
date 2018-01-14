@@ -40,6 +40,7 @@ The project depends on a few C++ libraries. One way to add most dependencies is 
 	.\vcpkg install nlohmann-json:x64-windows
 	.\vcpkg install fmt:x64-windows
     .\vcpkg install boost:x64-windows
+    .\vcpkg install gtest:x64-windows
 
 There are two dependencies which need to be installed by hand: __CNTK__ and __Torch's Tensor library__.
 
@@ -51,6 +52,8 @@ To hook them up, without changing any project settings:
 * Torch's Tensor library: Copy the result folder of __MAKE_INSTALL__ under the nativekeras solution, renaming it to __th7__.
 * CNTK: Create a folder called __cntk__ under the solution. From the CNTK repository, copy __CNTK/Source/CNTKv2LibraryDll/API__ folder to the newly created __cntk__ folder under the solution.
 Now you have __cntk/API__. Similary, from the CNTK repository copy __CNTK/x64/Release_CpuOnly__, to __cntk/Release_CpuOnly__.
+
+The CNTK version changes rapidly, I usually have to update the CNTK library name in the Visual Studio linker input section.
 
 After these two steps, I would expect the project to build.
 
