@@ -5,7 +5,8 @@ $soluctionDir = Split-Path $PSScriptRoot
 $path = Join-Path $soluctionDir "\NativeKeras"
 Set-Location $path
 
-$command = "nuget.exe pack NativeKeras.nuspec -Prop Configuration=Release"
-Invoke-Expression $command
+$exePath = Get-Command nuget.exe | Select-Object -ExpandProperty Definition
+$args = "pack NativeKeras.nuspec -Prop Configuration=Release"
+Start-Process -Wait -NoNewWindow -ArgumentList $args $exePath
 
 Set-Location $location

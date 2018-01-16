@@ -24,13 +24,12 @@
     <file src="..\output\bin\Release\libprotobuf.dll" target="build\x64" />
     <file src="..\output\bin\Release\libprotobuf-lite.dll" target="build\x64" />
     <file src="..\output\bin\Release\libquadmath-0.dll" target="build\x64" />
-    <file src="..\output\bin\Release\mkl_cntk_p.dll" target="build\x64" />
+    <file src="..\output\bin\Release\mklml.dll" target="build\x64" />
     <file src="..\output\bin\Release\opencv_world310.dll" target="build\x64" />
     <file src="..\output\bin\Release\TH.dll" target="build\x64" />
     <file src="..\output\bin\Release\zip.dll" target="build\x64" />
     <file src="..\output\bin\Release\zlib.dll" target="build\x64" />
-    <file src="..\output\bin\Release\zlib1.dll" target="build\x64" />
-
+    
     <file src="..\output\bin\Release\Newtonsoft.Json.dll" target="lib\net45" />
     <file src="..\output\bin\Release\Google.Protobuf.dll" target="lib\net45" />
     <file src="..\output\bin\Release\TensorSharp.dll" target="lib\net45" />
