@@ -15,7 +15,7 @@ As a sample implementatoin, NativeKeras provides a C# library.
 # Status, Goals and Roadmap
 The current code base implements a good number of basic Keras functionality like initializers
 and activations. The basic Keras layers (*Dense*, *Dropout*, etc) are also implemented. Last,
-a good number of the image related layers is implemented as well.
+a good number of the image related layers (Conv2D, MaxPooling2D, etc) is implemented as well.
 
 NativeKeras C++ layers are similar to the ongoing work to integrate [ONNX](https://github.com/onnx/onnx)
 into [CNTK](https://github.com/Microsoft/CNTK/). To avoid duplication, we are planning to add
@@ -59,7 +59,7 @@ After these two steps, I would expect the project to build.
 
 
 # Training MNIST, Keras-style
-[Keras' MNIST example](https://github.com/fchollet/keras/blob/master/examples/mnist_cnn.py) coded in __nativekeras__:
+[Keras' MNIST example](https://github.com/fchollet/keras/blob/master/examples/mnist_cnn.py) coded in NativeKeras:
 
     // Define the DNN
     var model = new Sequential();
