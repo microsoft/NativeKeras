@@ -17,6 +17,7 @@ a good number of the image related layers (Conv2D, MaxPooling2D, etc) is impleme
 NativeKeras is a *proof of concept* at this stage.
 * Windows is the only supported platform
 * No GPU use yet
+* Recurrent neural networks are not supported, however, there is [a plan to enable them](#goals-and-roadmap)
 
 # Installation
 
