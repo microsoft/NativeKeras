@@ -8,15 +8,19 @@ NativeKeras is implemented directly on top of [Microsoft's Cognitive Toolkit](ht
 
 As a sample implementatoin, NativeKeras provides a C# library.
 
-
-# Installation
-
-
-# Status, Goals and Roadmap
+# Status
 The current code base implements a good number of basic Keras functionality like initializers
 and activations. The basic Keras layers (*Dense*, *Dropout*, etc) are also implemented. Last,
 a good number of the image related layers (Conv2D, MaxPooling2D, etc) is implemented as well.
 
+# Limitations
+NativeKeras is a *proof of concept* at this stage.
+* Windows is the only supported platform
+* No GPU use yet
+
+# Installation
+
+# Goals and Roadmap
 NativeKeras C++ layers are similar to the ongoing work to integrate [ONNX](https://github.com/onnx/onnx)
 into [CNTK](https://github.com/Microsoft/CNTK/). To avoid duplication, we are planning to add
 new layers as they are added to CNTK. This is why NativeKeras still lacks, among others, **LSTM** and **Embedding** layers.
