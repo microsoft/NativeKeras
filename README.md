@@ -46,17 +46,21 @@ The project depends on a few C++ libraries. One way to add most dependencies is 
 	.\vcpkg install fmt:x64-windows
     .\vcpkg install boost:x64-windows
     .\vcpkg install gtest:x64-windows
+    .\vcpkg install torch-th:x64-windows
 
 There are two dependencies which need to be installed by hand: __CNTK__ and __Torch's Tensor library__.
 
 Both are relatively easy to build (for C++ libraries that is):
-* CNTK: follow [the development instructions](https://docs.microsoft.com/en-us/cognitive-toolkit/setup-development-environment). The Release_CpuOnly target is integrated in the project - see the instructions below.
-* Torch's Tensor library: a self-contained, cmake project. Build only the TH library not the entire Torch project.
+* CNTK: Either follow [the development instructions](https://docs.microsoft.com/en-us/cognitive-toolkit/setup-development-environment). The Release_CpuOnly target is integrated in the project - see the instructions below. Alternatively, get the CNTK.CPUOnly nuget version 2.4.0. It contains the headers and the libraries - there are instrucitons below where to copy them.
+* Torch's Tensor library: it is installed via vcpkg, but the dll is needed at runtime.
 
 To hook them up, without changing any project settings:
-* Torch's Tensor library: Copy the result folder of __MAKE_INSTALL__ under the nativekeras solution, renaming it to __th7__.
+* Torch's Tensor library: Copy the result folder of __MAKE_INSTALL__ under the nativekeras solution, renaming it to __th7__. The target directory contains three folders:
+   * bin - the dll
+   * include - the header files (contains a single directory called __TH7__)
+   * lib - TH.lib
 * CNTK: Create a folder called __cntk__ under the solution. From the CNTK repository, copy __CNTK/Source/CNTKv2LibraryDll/API__ folder to the newly created __cntk__ folder under the solution.
-Now you have __cntk/API__. Similary, from the CNTK repository copy __CNTK/x64/Release_CpuOnly__, to __cntk/Release_CpuOnly__.
+Now you have __cntk/API__. Similary, from the CNTK repository copy __CNTK/x64/Release_CpuOnly__, to __cntk/Release_CpuOnly__. Alternatively, if using the nuget, copy the headers to the API directory, etc.
 
 The CNTK version changes rapidly, I usually have to update the CNTK library name in the Visual Studio linker input section.
 
