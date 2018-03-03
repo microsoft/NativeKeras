@@ -55,7 +55,7 @@ Both are relatively easy to build (for C++ libraries that is):
 * Torch's Tensor library: it is installed via vcpkg, but the dll is needed at runtime.
 
 To hook them up, without changing any project settings:
-* Torch's Tensor library: Copy the result folder of __MAKE_INSTALL__ under the nativekeras solution, renaming it to __th7__. The target directory contains three folders:
+* Torch's Tensor library: Copy the result folder of __MAKE_INSTALL__ under the nativekeras solution, renaming it to __th7__. Alternatively, the content can be copied from the various subfolders of __vcpkg/installed__. The target directory contains three folders:
    * bin - the dll
    * include - the header files (contains a single directory called __TH7__)
    * lib - TH.lib
