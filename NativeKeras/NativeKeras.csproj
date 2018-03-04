@@ -59,11 +59,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IDll.cs" />
     <Compile Include="Keras.cs" />
+    <Compile Include="KerasCntkDll.cs" />
     <Compile Include="KerasProto.cs" />
     <Compile Include="KerasUtils.cs" />
     <Compile Include="ProgressWriter.cs" />
     <Compile Include="TensorUtils.cs" />
+    <Compile Include="WindowsDll.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />

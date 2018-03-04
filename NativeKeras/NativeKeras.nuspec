@@ -5,11 +5,12 @@
     <version>0.0.1</version>
     <authors>Ivan Popivanov</authors>
     <owners>Ivan Popivanov</owners>
-    <licenseUrl>https://kerasharp.visualstudio.com/_git/kerasharp?path=%2FLICENSE.md</licenseUrl>
-    <projectUrl>https://kerasharp.visualstudio.com/kerasharp/</projectUrl>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/Microsoft/NativeKeras/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Microsoft/NativeKeras/</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <description>Keras-style API for .NET. Uses the Cognitive Toolking (CNTK) as backend.</description>
     <tags>native keras cntk</tags>
+    <copyright>Copyright ©2017 Microsoft Corporation</copyright>
   </metadata>
 
   <files>

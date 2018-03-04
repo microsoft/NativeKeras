@@ -658,6 +658,7 @@ namespace Keras
                 ulong exceptionPtr = 0;
 
                 KerasFitModel(bytes, (uint)bytes.Length, ref outData, ref outLen, ref outPtr, ref exceptionData, ref exceptionLen, ref exceptionPtr);
+                // KerasCntkDll.KerasFitModel(bytes, (uint)bytes.Length, ref outData, ref outLen, ref outPtr, ref exceptionData, ref exceptionLen, ref exceptionPtr);
 
                 if (exceptionLen == 0)
                 {
