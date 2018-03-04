@@ -22,7 +22,7 @@ NativeKeras is a *proof of concept* at this stage.
 # Installation
 To give NativeKeras a try from C#, install NativeKeras.CpuOnly nuget.
 
-Otherwise, follow [the build setup instructions below](#setup-to-build-native-keras).
+Otherwise, follow [the build setup instructions below](#setup-to-build-nativekeras).
 
 # Goals and Roadmap
 NativeKeras C++ layers are similar to the ongoing work to integrate [ONNX](https://github.com/onnx/onnx)
