@@ -20,6 +20,9 @@ NativeKeras is a *proof of concept* at this stage.
 * Recurrent neural networks are not supported, however, there is [a plan to enable them](#goals-and-roadmap)
 
 # Installation
+To give NativeKeras a try from C#, install NativeKeras.CpuOnly nuget.
+
+Otherwise, follow [the build setup instructions below](#setup-to-build-native-keras).
 
 # Goals and Roadmap
 NativeKeras C++ layers are similar to the ongoing work to integrate [ONNX](https://github.com/onnx/onnx)
